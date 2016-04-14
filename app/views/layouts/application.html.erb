@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Loja de Camisetas" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    "application", :media => "all", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%= nav_bar brand: "Loja de Camisetas", brand_link: root_url do %>
+      <%= form_tag busca_produto_path, method: :get, class: "navbar-form navbar-right" do %>
+        <div class="form-group">
+          <%= text_field_tag :nome, @nome_a_buscar, class: "form-control" %>
+          <%= button_to "Buscar", nil, class: "btn btn-default" %>
+        </div>
+      <% end %>
+    <% end %>    
+    <div class="container">
+        <%= yield %>
+    </div>
+  </body>
+</html>

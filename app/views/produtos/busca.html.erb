@@ -1,0 +1,17 @@
+
+<div class="container">
+	<table class="table table-bordered">
+	    <thead>
+	        <tr>
+	            <th style="padding:5px; width:250px;">Nome</th>
+	            <th style="padding:5px;">Descrição</th>
+	            <th style="padding:5px; width:150px;">Preço</th>
+	            <th style="padding:5px; width:150px;">Quantidade</th>    
+	            <th style="padding:5px; width:100px;"></th>        
+	        </tr>
+	    </thead>
+	    <tbody>
+			<%= render partial: "produto", collection: @produtos %>
+	    </tbody>
+	</table>
+</div>
